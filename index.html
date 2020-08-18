@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Touch-Speed Meter</title>
+	<script type="text/javascript" src="game.js"></script>
+	<script type="text/javascript" src="score.js"></script>
+	<script type="text/javascript" src="jquery-310.min.js"></script>
+
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			    background: #FFEB3B;
+		}
+
+		h2 small{float: right;
+	    background: #607D8B;
+	    color: #fff;
+	    padding: 4px 8px;
+	    font-weight: 100;
+	    border-radius: 15px;
+	    font-size: 17px;}
+		
+		.btn:focus {
+		    outline: none!important;
+		}
+
+
+		.btn-circle{
+		    background: #4dbf51;
+		    border: 1px solid #4dbf51;
+		    color: #fff;
+		    padding: 5px 10px;
+		    border-radius: 100px;
+		    width: 100px;
+		    height: 100px;
+		    box-shadow: 1px 2px 2px 3px #4CAF50;
+		}
+		.btn-circle:hover{
+			background: #4CAF50!important;
+			border: 1px solid #4dbf51!important;
+			box-shadow: 1px 2px 2px 3px #4dbf51!important;
+		}
+
+		#play {
+			font-size: 24px;
+		}
+
+		.homepage{
+		}
+		.header{}
+		.highscore {
+
+			width: 100px;
+			padding: 5px 15px;
+			background: #FFC107;
+			border: solid #FFC107;
+			color: #4d4d4d;
+			border-radius: 5px;
+			font-family: sans-serif;
+			text-align: center;
+		}
+		.score {
+		    border: solid #d6d6d6 2px;
+		    background: #fff;
+		    padding: 10px 5px;
+		    margin: 5px;
+		    text-align: center;
+		    font-size: 24px;
+		}
+		.name {
+		    text-align: center;
+		    background: #FFEB3B;
+		    color: #607D8B;
+		    border-radius: 5px;
+		    padding: 3px;
+		}
+		.timer-box{
+			background: #FFC107;
+		    width: 30px;
+		    height: 30px;
+		    border-radius: 50%;
+		    color: #6f6f6f;
+		    padding: 5px;
+		    border: solid #e1aa03;
+		}
+		.timer-title{
+			font-size: 8px;
+		}
+
+		.score-box{
+		    padding: 10px;
+		    font-size: 40px;
+		    background: #fff;
+		    border-radius: 50%;
+		    width: 55px;
+		    height: 55px;
+		    margin: 25px;
+		    border: solid #cecece;
+		}
+		.score-title {
+		    font-size: 10px;
+		    background: #cecece;
+		    color: #4d4d4d;
+		    border-radius: 5px;
+		    padding: 1px 2px;
+		}
+
+		.finalscore-title{
+			font-size: 24px;
+		    background: #cecece;
+		    color: #4d4d4d;
+		    border-radius: 5px;
+		    padding: 5px 15px;
+		    width:150px;	
+		}
+		.finalscore-box{
+		    padding: 20px;
+		    font-size: 50px;
+		    background: #fff;
+		    border-radius: 50%;
+		    width: 55px;
+		    height: 55px;
+		    margin: 25px;
+		    border: solid #cecece;
+		    color: #607D8B;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function game(){
+			$('#gameplay').hide();
+			$('#afterplay').hide();
+		}
+
+		function play(){
+			$('#homepage').hide();
+			$('#gameplay').show();
+			timeCount();
+		}
+	</script>
+</head>
+<body onload="game()">
+	<div class="body">
+		<div id="homepage" class="homepage">
+			<center>
+				<div class="header">
+					<center>
+						<h2>TOUCH-SPEED
+							<br><small>Meter</small>
+							
+						</h2>
+					</center>
+				</div>
+
+			
+				<button id="play" class="btn btn-circle" onclick="play()" type="button">PLAY</button>
+			
+
+				<div class="highscore">
+					<b>High Score</b>
+					<div class="score">100</div>
+					<div class="name"><b>Hello</b></div>
+				</div>
+			</center>
+		</div>
+		<div id="gameplay" class="gameplay">
+			<center>
+				<div class="timer-box">
+					<div class="timer-title">Time</div>
+					<div id="timer">00</div>	
+				</div>
+			
+				<div class="score-box">
+					<div class="score-title">Point</div>
+					<div id="score">00</div>
+				</div>
+			
+				<button onclick="pointCounter()" class="btn btn-circle">Counter</button>
+			</center>	
+		</div>
+		<div id="afterplay" class="afterplay">
+
+			<center>
+				<div class="finalscore-title">FINAL SCORE</div>
+				<div class="finalscore-box">
+					
+					<div id="finalscore">00</div>
+				</div>
+
+
+				<input class="" id="nameScore" type="" name="">
+				<button class="btn btn-square"> Submit</button>
+			</center>
+
+		</div>	
+	</div>
+</body>
+</html>
